@@ -11,7 +11,7 @@ RUN apt-get -y install \
 	unzip \
 	git \
 	python-setuptools
-RUN sudo apt-get install -y python-Levenshtein make libmysqlclient-dev python-mysqldb python-pip python-zmq python-numpy gfortran libopenblas-dev liblapack-dev g++ sqlite3 libsqlite3-dev python-sqlite redis-server
+RUN apt-get install -y python-Levenshtein make libmysqlclient-dev python-mysqldb python-pip python-zmq python-numpy gfortran libopenblas-dev liblapack-dev g++ sqlite3 libsqlite3-dev python-sqlite redis-server
 
 WORKDIR /home
 RUN git clone https://github.com/mbartoli/patentprocessing
