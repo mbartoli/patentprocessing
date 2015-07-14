@@ -17,7 +17,7 @@ WORKDIR /home
 RUN git clone https://github.com/mbartoli/patentprocessing
 WORKDIR /home/patentprocessing 
 
-RUN pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 
 
 RUN unzip patentprocessor.zip
