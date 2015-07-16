@@ -10,11 +10,11 @@ object PageRank {
 		val sc = new SparkContext("local", "pagerank-test", new SparkConf)
 
 		// Load the edges as a graph
-		val graph = GraphLoader.edgeListFile(sc, "hdfs:///data/patents/citation.csv")
+		val graph = GraphLoader.edgeListFile(sc, "hdfs:///data/patents/citation-processed.csv")
 		// Run PageRank
 		val ranks = graph.pageRank(0.01).vertices
 		// Join the ranks with the usernames
-		val users = sc.textFile("hdfs:///data/patents/example/patents.csv").map { line =>
+		val users = sc.textFile("hdfs:///data/patents/patents-processed.csv").map { line =>
 		  val fields = line.split(",")
 		  (fields(0).toLong, fields(1))
 		}
