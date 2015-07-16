@@ -12,5 +12,5 @@ with open("citation.csv","rb") as source:
     with open("citation-processed.csv","wb") as result:
         wtr= csv.writer(result, delimiter=" ")
         for r in rdr:
-            wtr.writerow((re.sub('\W+', '', str(r[0])), re.sub('\W+', '', str(r[5]))))
+            wtr.writerow((re.sub(r'\D', '', str(r[0])), re.sub(r'\D', '', str(r[5]))))
 
