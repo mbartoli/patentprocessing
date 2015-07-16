@@ -15,7 +15,7 @@ RUN apt-get install -y python-Levenshtein make libmysqlclient-dev python-mysqldb
 
 RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
 
-RUN apt-get update && apt-get -y install sbt
+RUN apt-get update && apt-get --force-yes install sbt
 
 WORKDIR /home
 RUN git clone https://github.com/mbartoli/patentprocessing
