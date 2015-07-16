@@ -5,11 +5,12 @@ patent,Cit_Date,Cit_Name,Cit_Kind,Cit_Country,Citation,Category,CitSeq
 '''
 
 import csv
+import re
 
 with open("citation.csv","rb") as source:
     rdr= csv.reader(source)
     with open("citation-processed.csv","wb") as result:
         wtr= csv.writer(result, delimiter=" ")
         for r in rdr:
-            wtr.writerow((r[0], r[5]))
+            wtr.writerow((re.sub('\W+', '', str(r[0])), re.sub('\W+', '', str(r[5]))))
 
