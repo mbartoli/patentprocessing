@@ -7,8 +7,8 @@ import org.apache.spark.rdd.RDD
 
 object PageRank {
 	def main(args: Array[String]) {
-		val sc = new SparkContext("local", "pagerank-test", new SparkConf)
-
+		val conf = new SparkConf().setAppName("PatentPagerank")
+    		val sc = new SparkContext(conf)
 		// Load the edges as a graph
 		val graph = GraphLoader.edgeListFile(sc, "hdfs:///data/patents/citation-processed.csv")
 		// Run PageRank
