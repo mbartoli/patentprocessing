@@ -1,4 +1,4 @@
-name := "Simple Project"
+name := "PatentPagerank"
 
 version := "1.0"
 
