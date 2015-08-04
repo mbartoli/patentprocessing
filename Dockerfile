@@ -22,3 +22,6 @@ RUN git clone https://github.com/mbartoli/patentprocessing
 WORKDIR /home/patentprocessing 
 
 RUN unzip patentprocessor.zip
+
+WORKDIR /home/patentprocessing/pagerank
+RUN sbt package
