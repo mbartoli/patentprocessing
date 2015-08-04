@@ -1,7 +1,7 @@
 import re
 
-f = open('/home/vagrant/patentdata/patent-1.txt', 'r'):
-	
-for line in f:	
-	if re.match("^\d+\ \d+$", line):
-		print line
+f = open("citation-processed.csv", "r")
+o = open("citation.txt", "w")
+for line in f:
+        if re.match("^\d+ \d+$", line.rstrip('\r\n')):
+                print >> o, line,
