@@ -9,7 +9,13 @@ sbt package
 
 Submit to the cluster
 ```
-spark-submit -v --driver-library-path /usr/lib/hadoop/lib/native --class "PageRank" --master yarn-cluster --deploy-mode cluster --executor-memory 50G --num-executors 50 target/scala-2.10/patentpagerank_2.10-1.0.jar
+spark-submit -v --driver-library-path /usr/lib/hadoop/lib/native \
+                --class "PageRank" \
+                --master yarn-cluster \
+                --deploy-mode cluster \
+                --executor-memory 8G \
+                --num-executors 10 \
+                target/scala-2.10/patentpagerank_2.10-1.0.jar
 ```
 
 ## Misc
